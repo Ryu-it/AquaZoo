@@ -1,0 +1,27 @@
+<!-- hipo_icon.html.erb -->
+<div class="relative w-[600px] h-[600px] bg-green-900 flex items-center justify-center">
+  <svg class="text-yellow-100 absolute inset-0 w-full h-full" viewBox="0 0 64 64" fill="currentColor">
+    <!-- 顔の輪郭 -->
+    <ellipse cx="32" cy="40" rx="20" ry="18" />
+
+    <!-- 鼻の丸 -->
+    <circle cx="24" cy="44" r="3" fill="currentColor" />
+    <circle cx="40" cy="44" r="3" fill="currentColor" />
+
+    <!-- 目 -->
+    <circle cx="24" cy="30" r="2" fill="black" />
+    <circle cx="40" cy="30" r="2" fill="black" />
+
+    <!-- 耳 -->
+    <circle cx="18" cy="24" r="3" />
+    <circle cx="46" cy="24" r="3" />
+
+    <!-- あご -->
+    <path d="M22 48 Q32 58 42 48" fill="currentColor" />
+  </svg>
+
+<p class="pt-40 absolute inset-0 flex items-center justify-center text-xl font-semibold z-10">
+  <%= text %>
+</p>
+
+</div>

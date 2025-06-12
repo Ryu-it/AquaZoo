@@ -1,0 +1,16 @@
+<body class="bg-green-900 bg-opacity-80">
+  <div class="min-h-screen flex flex-col items-center justify-center space-y-40">
+    <%= image_tag "zoo.jpg", class: "w-full h-[700px]" %>
+    <div class="flex items-center ">
+      <%= render partial: "shares/hipo_icon", locals: { text: "動物園に行く" } %>
+    </div>
+    <div class="flex space-x-50">
+      <div class="flex items-center justify-center text-center">
+        <%= render partial: "shares/hipo_icon", locals: { text: "動物園に行く" } %>
+      </div>
+      <div class="flex items-center ">
+        <%= render partial: "shares/hipo_icon", locals: { text: "推しを教える" } %>
+      </div>
+    </div>
+  </div>
+</body>
