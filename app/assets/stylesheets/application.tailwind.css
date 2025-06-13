@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+    --color-lemon-500: rgb(221, 211, 182);
+  }
+  
