@@ -1,0 +1,31 @@
+<%= render "shares/aqua_header" %>
+<div class="min-h-screen flex flex-col items-center justify-center bg-[rgba(0,76,120,1)] text-white">
+  <h2 class="text-center text-2xl font-bold mb-8"><%= t('.sign_in') %></h2>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email, class: "block" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "p-2 border rounded-lg" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "block mt-8" %><br />
+    <%= f.password_field :password, autocomplete: "current-password", class: "p-2 border rounded-lg mb-8" %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions flex justify-center">
+    <%= f.submit t(".sign_in"), class: "w-full max-w-xs bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 rounded-full" %>
+  </div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="text-red-600 mt-8">
+    <%= flash[:alert] %>
+  </div>
+<% end %>
+</div>

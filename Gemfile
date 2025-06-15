@@ -47,6 +47,8 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "dotenv-rails"
+
+  gem "rspec-rails", "~> 7.0.0"
 end
 
 group :development do
@@ -61,3 +63,8 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "devise", "~> 4.9"
+gem "devise-i18n"
+
+gem "rails-i18n", "~> 7.0.0"
