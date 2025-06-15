@@ -3,7 +3,7 @@
     <div class="flex space-x-15 text-xl">
         <%= link_to "水族館に行く", root_path %>
         <%= link_to "動物園に行く", root_path %>
-              <!-- ハンバーガーメニュー -->
+                <!-- ハンバーガーメニュー -->
             <div x-data="{ open: false }" class="relative">
                 <!-- 三本線ボタン -->
             <button @click="open = !open" class="focus:outline-none">
@@ -13,11 +13,12 @@
                 d="M4 6h16M4 12h16M4 18h16" />
             </svg>
             </button>
-              <!-- メニュー内容 -->
+                <!-- メニュー内容 -->
         <div x-show="open" @click.outside="open = false" class="absolute right-0 mt-8 w-60 bg-sky-400 text-white rounded shadow-lg">
-            <%= link_to "館員登録", root_path, class: "block px-4 py-2 hover:bg-gray-700" %>
-            <%= link_to "ログイン", root_path, class: "block px-4 py-2 hover:bg-gray-700" %>
+            <%= link_to "館員登録", new_user_registration_path, class: "block px-4 py-2 hover:bg-gray-700" %>
+            <%= link_to "ログイン", new_user_session_path, class: "block px-4 py-2 hover:bg-gray-700" %>
             <%= link_to "トップに戻る", root_path, class: "block px-4 py-2 hover:bg-gray-700" %>
+            <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: "block px-4 py-2 hover:bg-gray-700" %>
         </div>
     </div>
 </div>

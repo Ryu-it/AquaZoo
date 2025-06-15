@@ -1,0 +1,35 @@
+<%= render "shares/zoo_header" %>
+<div class="min-h-screen flex flex-col items-center justify-center bg-green-900 text-white">
+  <h2 class="text-center text-2xl font-bold mb-8"><%= t(".sign_up") %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name, class: "block" %><br />
+    <%= f.text_field :name, autofocus: true, autocomplete: "name", class: "p-2 border rounded-lg" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, class: "block mt-8" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "p-2 border rounded-lg" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "block mt-8" %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %>字以上)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "p-2 border rounded-lg" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: "block mt-8" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "p-2 border rounded-lg" %>
+  </div>
+
+  <div class="actions flex justify-center mt-8">
+    <%= f.submit t(".sign_up"), class: "w-full max-w-xs bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 rounded-full" %>
+  </div>
+</div>
+<% end %>
