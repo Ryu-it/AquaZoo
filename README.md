@@ -20,3 +20,14 @@
 ■ サービスの差別化ポイント・推しポイント
 　ライト層とヘビー層に対して異なるアプローチを行う。
 
+After MVP
+Google認証機能
+Profileの作成
+Notificationsの作成
+Users/editの作成
+いいねとブックマーク
+ラインでシェア
+投稿のランキング
+ページネーション
+i18n
+公式urlはvalidationを組み込む
