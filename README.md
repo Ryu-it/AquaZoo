@@ -31,3 +31,4 @@ Users/editの作成
 ページネーション
 i18n
 公式urlはvalidationを組み込む
+検索機能でgoogleのAPIで検索から住所を入力したい
