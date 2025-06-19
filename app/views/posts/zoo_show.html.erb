@@ -1,0 +1,27 @@
+<%= render "shares/zoo_header" %>
+<body class="bg-green-900 bg-opacity-80">
+    <div class="max-w-6xl mx-auto px-2 my-16">
+        <div class="bg-lemon-500 border rounded-lg shadow-md p-4 h-full">
+            <span class="font-bold text-xl">
+                <%= @post.user.name %>
+            </span>
+            <div class= "font-bold text-2xl text-center mt-4 mb-4"> 
+                「 <%= @post.title %> 」 
+            </div>
+            <% if @post.image.attached? %>
+                <div class="flex justify-center items-center">
+                    <%= image_tag @post.image.variant(resize_to_limit: [600, 750]), class: "border-[12px]  border-green-900" %>
+                </div>
+            <% end %>
+            <p class="mt-8 font-bold text-xl flex flex-col items-center">
+                おすすめポイント！
+            </p>
+            <div class= "p-8 w-[700px] mx-auto flex flex-col items-center border border-green-900 mt-8 font-semibold"> 
+                <%= @post.body %> 
+            </div>
+            <div class= "font-bold text-xl mt-8 mb-4"> 
+                動物園名・<%= @post.name %> 
+            </div>
+        </div>
+    </div>
+</body>

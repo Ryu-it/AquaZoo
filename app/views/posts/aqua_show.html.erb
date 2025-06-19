@@ -1,0 +1,27 @@
+<%= render "shares/aqua_header" %>
+<body class="bg-[rgba(0,76,120,1)]">
+    <div class="max-w-6xl mx-auto px-2 my-16">
+        <div class="bg-sky-600 border rounded-lg shadow-md p-4 h-full">
+            <span class="text-white font-bold text-xl">
+                <%= @post.user.name %>
+            </span>
+            <div class= "text-white font-bold text-2xl text-center mt-4 mb-4"> 
+                「 <%= @post.title %> 」 
+            </div>
+            <% if @post.image.attached? %>
+                <div class="flex justify-center items-center">
+                    <%= image_tag @post.image.variant(resize_to_limit: [600, 750]), class: "border-[12px]  border-[rgba(0,76,120,1)]" %>
+                </div>
+            <% end %>
+            <p class="text-white mt-8 font-bold text-xl flex flex-col items-center">
+                おすすめポイント！
+            </p>
+            <div class= "text-white p-8 w-[700px] mx-auto flex flex-col items-center border border-[rgba(0,76,120,1)] mt-8 font-semibold"> 
+                <%= @post.body %> 
+            </div>
+            <div class= "text-white font-bold text-xl mt-8 mb-4"> 
+                動物園名・<%= @post.name %> 
+            </div>
+        </div>
+    </div>
+</body>

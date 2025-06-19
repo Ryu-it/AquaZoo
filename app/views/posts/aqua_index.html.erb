@@ -5,7 +5,8 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
       <% @posts.each do |post| %>
         <% if post.category.name == "aqua" %>
-          <div class="bg-sky-600 border rounded-lg shadow-md p-4">
+          <%= link_to post_path(post, category: "aqua") do %>
+          <div class="bg-sky-600 border rounded-lg shadow-md p-4 h-full">
             <span class="font-semibold text-white">
               <%= post.user.name %>
             </span>
@@ -18,6 +19,7 @@
               </div>
             <% end %>
           </div>
+          <% end %>
         <% end %>
       <% end %>
     </div>

@@ -3,9 +3,10 @@
 <body class="bg-green-900 bg-opacity-80">
   <div class="max-w-6xl mx-auto px-2 my-16">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
-      <% @posts.each do |post| %>
+        <% @posts.each do |post| %>
         <% if post.category.name == "zoo" %>
-          <div class="bg-lemon-500 border rounded-lg shadow-md p-4">
+        <%= link_to post_path(post, category: "zoo") do %>
+          <div class="bg-lemon-500 border rounded-lg shadow-md p-4 h-full">
             <span class="font-semibold">
               <%= post.user.name %>
             </span>
@@ -19,6 +20,7 @@
             <% end %>
           </div>
         <% end %>
+          <% end %>
       <% end %>
     </div>
   </div>
