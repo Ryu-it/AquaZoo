@@ -1,15 +1,11 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.includes(:user)
     case params[:category]
     when "zoo"
-      @posts = Post.where(category: "zoo")
       render "zoo_index"
     when "aqua"
-      @posts = Post.where(category: "aqua")
       render "aqua_index"
-    else
-      @posts = Post.all
-      render "index"
     end
   end
 
@@ -62,7 +58,8 @@ private
     :title,
     :body,
     :url,
-    :area_id
+    :area_id,
+    :image
     )
   end
 end
