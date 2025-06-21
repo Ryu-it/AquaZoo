@@ -1,0 +1,35 @@
+<%= render "shares/aqua_header" %>
+<%= render "shares/flash_message" %>
+<body class="bg-[rgba(0,76,120,1)]">
+    <div class="rounded-lg sm:p-10 max-w-3xl mx-auto border bg-sky-600 flex flex-col justyfy-center mt-[35px] mb-[35px]">
+        <%= form_with model: @post, class: "space-y-4" do |f| %>
+        <p class="text-center text-xl font-bold mb-8">水族館の投稿</p>
+        <div class="">
+            <%= f.label :name, "水族館の名前" %>
+            <%= f.text_field :name, class: "bg-white mt-2 block w-full border rounded-md shadow-sm p-3 focus:ring-sky-500 focus:border-sky-500" %>
+        </div>
+        <div class="">
+            <%= f.label :title, "一言" %>
+            <%= f.text_field :title, class: "bg-white mt-2 block w-full border rounded-md shadow-sm p-3 focus:ring-sky-500 focus:border-sky-500" %>
+        </div>
+        <div class="">
+            <%= f.label :body, "おすすめポイント！" %>
+            <%= f.text_area :body, class: "bg-white mt-2 block w-full border rounded-md shadow-sm p-3 focus:ring-sky-500 focus:border-sky-500", rows: "10" %>
+        </div>
+        <div class="">
+            <%= f.label :area_id, "地域" %>
+            <%= f.select :area_id, Area.all.collect { |p| [p.name, p.id] },
+            { include_blank: "選択してください" },
+            class: "bg-white mt-2 block w-full border rounded-md shadow-sm p-3 focus:ring-sky-500 focus:border-sky-500" %>
+        </div>
+        <div class="">
+            <%= f.label :image, "画像をアップロード" %>
+            <%= f.file_field :image, class: "bg-white mt-2 block w-full border rounded-md shadow-sm p-3 focus:ring-sky-500 focus:border-sky-500" %>
+        </div>
+            <%= hidden_field_tag :category, "aqua" %>
+        <div class="mt-8 flex flex-col items-center justyfy-center">
+        <%= f.submit "投稿", class: "bg-sky-500 hover:bg-sky-600 text-white font-bold py-2 px-4 rounded-md shadow-md transition duration-300" %>
+        </div>
+        <% end %>
+    </div>
+</body>

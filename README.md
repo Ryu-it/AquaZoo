@@ -21,14 +21,16 @@
 　ライト層とヘビー層に対して異なるアプローチを行う。
 
 After MVP
-Google認証機能
-Profileの作成
+(first)
 Notificationsの作成
-Users/editの作成
 いいねとブックマーク
 ラインでシェア
+(later)
 投稿のランキング
 ページネーション
 i18n
 公式urlはvalidationを組み込む
 検索機能でgoogleのAPIで検索から住所を入力したい
+Google認証機能
+Profileの作成
+Users/editの作成
