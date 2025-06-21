@@ -60,6 +60,51 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    case params[:category]
+    when "zoo"
+      @post = Post.find(params[:id])
+      render "zoo_edit"
+    when "aqua"
+      @post = Post.find(params[:id])
+      render "aqua_edit"
+    end
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      flash[:notice] = "編集に成功しました"
+
+      if @post.category.name == "zoo"
+        redirect_to posts_path(category: "zoo")
+      elsif @post.category.name == "aqua"
+        redirect_to posts_path(category: "aqua")
+      else
+        redirect_to root_path
+      end
+
+    else
+      flash.now[:alert] = "編集に失敗しました"
+
+      # カテゴリーに応じて render を変える
+      if @post.category&.name == "zoo"
+        render :zoo_edit, status: :unprocessable_entity
+      elsif @post.category&.name == "aqua"
+        render :aqua_edit, status: :unprocessable_entity
+      else
+        render :edit, status: :unprocessable_entity
+      end
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    flash[:notice] = "削除に成功しました"
+    redirect_to root_path
+  end
+
 private
 
   def post_params
