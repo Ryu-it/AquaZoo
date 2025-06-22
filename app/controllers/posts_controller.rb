@@ -1,6 +1,8 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.includes(:user)
+    @q = Post.includes(:user).ransack(params[:q])
+    @posts = @q.result
+    @areas = Area.all
     case params[:category]
     when "zoo"
       render "zoo_index"
