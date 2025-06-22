@@ -76,3 +76,5 @@ gem "rails-i18n", "~> 7.0.0"
 
 gem "image_processing", "~> 1.2"
 gem "mini_magick"
+
+gem "ransack"
