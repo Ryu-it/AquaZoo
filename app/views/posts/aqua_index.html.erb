@@ -3,11 +3,15 @@
 <body class="bg-[rgba(0,76,120,1)]">
   <%= render "search_form", q: @q, url: posts_path(category: "aqua") %>
   <div class="max-w-6xl mx-auto px-2 my-16">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-6 auto-rows-[1fr]">
       <% @posts.each do |post| %>
         <% if post.category.name == "aqua" %>
-          <%= link_to post_path(post, category: "aqua") do %>
-          <div class="bg-sky-600 border rounded-lg shadow-md p-4 h-full">
+<div class="h-full card-body bg-sky-600 border rounded-lg shadow-md p-4 flex flex-col justify-between">
+        <div onclick = "window.location.href = '<%= j post_path(post, category: "aqua") %>'"
+              role="button"
+              class="cursor-pointer post-card"
+              data-turbo="false">
+          
             <span class="font-semibold text-white">
               <%= post.user.name %>
             </span>
@@ -15,14 +19,21 @@
               「 <%= post.title %> 」 
             </div>
             <% if post.image.attached? %>
-              <div class="flex justify-center items-center">
-              <%= image_tag post.image.variant(resize_to_limit: [500, 530]), class: "border-[12px]  border-[rgba(0,76,120,1)]" %>
+              <div class="">
+              <%= image_tag post.image.variant(resize_to_limit: [500, 530]), class: "border-[12px] border-[rgba(0,76,120,1)]" %>
+              </div>
+            <% else %>
+              <div>
+              <%= image_tag "fish.png", class: "" %>
               </div>
             <% end %>
+            
           </div>
-          <% end %>
+          <%#= render "likes/like_buttons" %>
+        </div>
         <% end %>
       <% end %>
-    </div>
+      </div>
+
   </div>
 </body>

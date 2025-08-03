@@ -5,7 +5,7 @@
         <%= link_to "動物園に行く", posts_path(category: "zoo") %>
                 <!-- ハンバーガーメニューと推し -->
         <div x-data="{ open: false, message: false }" class="relative">
-            <button @click="message = !message" class="focus:outline-none">
+            <button @click="message = !message" class="focus:outline-none cursor-pointer">
                 <p class="h-6 mr-15">推しを教える</p>
             </button>
                 <!-- 三本線ボタン -->
